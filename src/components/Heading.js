@@ -1,8 +1,13 @@
 import React from "react";
+import Compoent1 from "./Compoent1";
 
 class Heading extends React.Component {
   render() {
-    return <h3>Hello Vaibhav</h3>;
+    return (
+      <div>
+        <Compoent1 />
+      </div>
+    );
   }
 }
 export { Heading };
