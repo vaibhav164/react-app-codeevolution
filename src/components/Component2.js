@@ -1,23 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { UserContext, SecondContext } from "../App";
 function Component2() {
+  const userData = useContext(UserContext);
+  const secondContextData = useContext(SecondContext);
   return (
-    <UserContext.Consumer>
-      {(value) => {
-        return (
-          <SecondContext.Consumer>
-            {(value2) => {
-              return (
-                <React.Fragment>
-                  <div>Data for context vlaue is {value}</div>
-                  <div>Data for context vlaue is {value2}</div>
-                </React.Fragment>
-              );
-            }}
-          </SecondContext.Consumer>
-        );
-      }}
-    </UserContext.Consumer>
+    <React.Fragment>
+      <p>Data for context of user {userData}</p>
+      <p>Data for Second COntext {secondContextData}</p>
+    </React.Fragment>
   );
 }
 
