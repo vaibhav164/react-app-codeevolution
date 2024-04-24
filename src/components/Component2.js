@@ -1,10 +1,23 @@
 import React from "react";
-import { userContext } from "../App";
+import { UserContext, SecondContext } from "../App";
 function Component2() {
   return (
-    <userContext.Consumer>
-      {(value) => <div>Data for context vlaue is {value}</div>}
-    </userContext.Consumer>
+    <UserContext.Consumer>
+      {(value) => {
+        return (
+          <SecondContext.Consumer>
+            {(value2) => {
+              return (
+                <React.Fragment>
+                  <div>Data for context vlaue is {value}</div>
+                  <div>Data for context vlaue is {value2}</div>
+                </React.Fragment>
+              );
+            }}
+          </SecondContext.Consumer>
+        );
+      }}
+    </UserContext.Consumer>
   );
 }
 

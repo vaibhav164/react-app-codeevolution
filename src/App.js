@@ -2,13 +2,16 @@ import React from "react";
 import "./App.css";
 import { Heading } from "./components/Heading";
 
-export const userContext = React.createContext();
+export const UserContext = React.createContext();
+export const SecondContext = React.createContext();
 const App = () => {
   return (
     <div className="App">
-      <userContext.Provider value="Vaibhav's first Context">
-        <Heading />
-      </userContext.Provider>
+      <UserContext.Provider value={"Vaibhav's first Context"}>
+        <SecondContext.Provider value={"second context Value"}>
+          <Heading />
+        </SecondContext.Provider>
+      </UserContext.Provider>
     </div>
   );
 };
